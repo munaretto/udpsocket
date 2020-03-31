@@ -11,13 +11,14 @@ var dgram_1 = require("dgram");
 var fs = __importStar(require("fs"));
 var host = '127.0.0.1';
 var port = 3001;
-var filePath = './misc/textfile.txt';
+var smallFilePath = './misc/smallfile.txt';
+var largeFilePath = './misc/largefile.txt';
 var client = dgram_1.createSocket("udp4");
 client.on('message', function (messageContent, info) {
     console.log("Client recebeu a mensagem '" + messageContent.toString() + "' do servidor.");
     client.close();
 });
-fs.readFile(filePath, function (err, content) {
+fs.readFile(largeFilePath, function (err, content) {
     var messageBuffer = Buffer.from(content);
     client.send(messageBuffer, 0, messageBuffer.length, port, host, function (err, bytes) {
         if (err)
