@@ -2,7 +2,7 @@ import { createSocket, Socket } from 'dgram';
 import * as fs from 'fs'
 
 const host          : string = '127.0.0.1';
-const port          : number =  3001;
+const port          : number =  5800;
 const smallFilePath : string = './misc/smallfile.txt';
 const largeFilePath : string = './misc/largefile.txt';
 const client        : Socket = createSocket("udp4");

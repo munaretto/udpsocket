@@ -10,7 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var dgram_1 = require("dgram");
 var fs = __importStar(require("fs"));
 var host = '127.0.0.1';
-var port = 3001;
+var port = 5800;
 var smallFilePath = './misc/smallfile.txt';
 var largeFilePath = './misc/largefile.txt';
 var client = dgram_1.createSocket("udp4");
